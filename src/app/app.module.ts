@@ -20,36 +20,8 @@ import { UserloginService } from './userlogin.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { NavbardComponent } from './navbard/navbard.component';
-import {
-  MatAutocompleteModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule
-} from '@angular/material';
+
+
 const appRoutes: Routes = [
 
   { path: '', component: RegistrationComponent },
@@ -60,7 +32,7 @@ const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'update/:id', component: UpdateComponent },
-  {path: 'nav', component: NavbardComponent}
+
 
 ];
 
@@ -76,9 +48,8 @@ const appRoutes: Routes = [
     UserlistComponent,
     UpdateComponent,
     HeaderComponent,
-    FooterComponent,
-    NavbardComponent
-  ],
+    FooterComponent  
+    ],
   imports: [
     RouterModule.forRoot(appRoutes, { useHash: true }),
     BrowserModule,
