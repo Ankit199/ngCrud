@@ -1,0 +1,42 @@
+ 
+<div class="row">
+  <div class=" col-md-1"></div>
+  <div class=" col-md-10">
+
+ <div class="well well-sm text-center "><h3>All User List</h3></div>
+      <!--<ng2-smart-table [settings]="settings" class="table" [source]="this.jsonapi"></ng2-smart-table>-->
+     <table class="table">
+      <tr>
+        <th>Id</th>    
+        <th>Name</th>
+           <th>Address</th>
+            <th>Email</th>
+             <th>Password</th>
+             <th>Delete</th>
+             <th>UpDate</th>
+             </tr>
+             <tr *ngFor="let jsonapi of jsonapi">
+            
+                <td>{{jsonapi.id}}</td>
+            <td>{{jsonapi.name}}</td>
+            <td>{{jsonapi.address}}</td>
+            <td>{{jsonapi.email}}</td>
+            <td>{{jsonapi.passward}}</td>
+            <td (click)="deletedata(jsonapi.id)">
+            <a><span class="glyphicon glyphicon-trash"></span> </a>
+        </td>
+
+        <td [routerLink]="['/update',jsonapi.id]">
+          <a><span class="glyphicon glyphicon-pencil"></span></a>
+        </td>
+             </tr>
+        </table>
+       <a href="#" routerLink="/registration"><h4>Add New User</h4></a>
+  </div>
+ 
+ 
+ 
+  <div class=" col-md-1">
+  
+  </div>
+</div>
