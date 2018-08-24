@@ -20,6 +20,7 @@ import { UserloginService } from './userlogin.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 const appRoutes: Routes = [
@@ -30,7 +31,7 @@ const appRoutes: Routes = [
   { path: 'registration', component: RegistrationComponent },
   { path: 'userlist', component: UserlistComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
+  { path: 'Home/contact', component: ContactComponent },
   { path: 'update/:id', component: UpdateComponent },
 
 
@@ -48,16 +49,16 @@ const appRoutes: Routes = [
     UserlistComponent,
     UpdateComponent,
     HeaderComponent,
-    FooterComponent  
-    ],
+    FooterComponent    ],
   imports: [
-    RouterModule.forRoot(appRoutes, { useHash: true }),
+    RouterModule.forRoot(appRoutes, { useHash: true , onSameUrlNavigation: 'reload' }),
     BrowserModule,
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
     Ng2SmartTableModule,
-
+    BrowserAnimationsModule
+    
 
   ],
   providers: [UserloginService],

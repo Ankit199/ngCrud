@@ -12,7 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^5.2.0",
+    "@angular/animations": "^5.2.11",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
     "@angular/core": "^5.2.0",
@@ -28,6 +28,7 @@
     "ng2-pagination": "^2.0.2",
     "ng2-smart-table": "^1.2.2",
     "ngx-pagination": "^3.0.3",
+    "ngx-toastr": "^9.0.2",
     "npm": "^6.3.0",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"

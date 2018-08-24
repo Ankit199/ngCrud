@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./userlist.component.css']
 })
 export class UserlistComponent implements OnInit {
-    name: string;
+  name: string;
   jsonapi = [];
   arr = [];
 
@@ -34,22 +34,18 @@ export class UserlistComponent implements OnInit {
       return this.http.delete(url).subscribe
         (
         (res: Response) => {
-          this.SearchAllUser();
+          this.jsonapi = this.jsonapi.filter(item => item.id !== id);
+          // this.SearchAllUser();
         }
         );
     }
   };
-
-
-
   SearchByName = function (name) {
     const url = `${'http://localhost:3000/jsonapi'}/${name}`;
     return this.http.get(url).subscribe(
       (res: Response) => { this.jsonapi = res.json(); });
   };
-
   ngOnInit() {
-
     this.SearchAllUser();
   }
 
