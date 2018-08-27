@@ -15,13 +15,12 @@ import { HttpModule } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { UpdateComponent } from './update/update.component';
 
-import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { UserloginService } from './userlogin.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { ToastrModule } from 'ngx-toastr';
 
 const appRoutes: Routes = [
 
@@ -56,8 +55,9 @@ const appRoutes: Routes = [
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2SmartTableModule,
-    BrowserAnimationsModule
+    
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
     
 
   ],

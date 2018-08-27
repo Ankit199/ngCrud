@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Http, Response, Headers } from '@angular/http';
-import { AuthHttp } from 'angular2-jwt';
+
 import { UserloginService } from '../userlogin.service';
 import { LoginComponent } from '../login/login.component';
 @Component({
