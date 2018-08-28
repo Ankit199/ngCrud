@@ -21,7 +21,9 @@ import { FooterComponent } from './footer/footer.component';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-
+import {    AngularFireModule  } from 'angularfire2';  
+import {    environment  } from '../environments/environment';  
+import {    AngularFireDatabaseModule } from 'angularfire2/database'; 
 const appRoutes: Routes = [
 
   { path: '', component: RegistrationComponent },
@@ -55,13 +57,14 @@ const appRoutes: Routes = [
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
-    
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot()
     
 
   ],
-  providers: [UserloginService],
+  providers: [UserloginService,AngularFireDatabaseModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

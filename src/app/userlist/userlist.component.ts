@@ -1,3 +1,4 @@
+import { AngularFireDatabase } from 'angularfire2/database';  
 import { Component, OnInit } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
@@ -15,29 +16,35 @@ export class UserlistComponent implements OnInit {
   jsonapi = [];
   arr = [];
 
-  constructor(private http: Http, private router: Router, private route: ActivatedRoute) { }
+  constructor(private http: Http, private router: Router, private route: ActivatedRoute,private db : AngularFireDatabase) { }
 
   SearchAllUser = function () {
-    this.http.get('http://localhost:3000/jsonapi').subscribe(
-      (res: Response) => {
-        this.jsonapi = res.json();
-      }
-    );
-
+    // this.http.get('http://localhost:3000/jsonapi').subscribe(
+    //   (res: Response) => {
+    //     this.jsonapi = res.json();
+    //   }
+    // );
+    this.db.list('/JsonApi').valueChanges().subscribe(countries => {  
+      debugger;      
+      this.jsonapi = countries;   
+  });  
   };
 
 
 
-  deletedata = function (id) {
+  deletedata = function (id:string ) {
+    debugger;
     if (confirm('are you sure want to Delete ? ' + id)) {
-      const url = `${'http://localhost:3000/jsonapi'}/${id}`;
-      return this.http.delete(url).subscribe
-        (
-        (res: Response) => {
-          this.jsonapi = this.jsonapi.filter(item => item.id !== id);
-          // this.SearchAllUser();
-        }
-        );
+    //   const url = `${'http://localhost:3000/jsonapi'}/${id}`;
+      // return this.http.delete(url).subscribe
+      //   (
+      //   (res: Response) => {
+      //     this.jsonapi = this.jsonapi.filter(item => item.id !== id);
+      //     // this.SearchAllUser();
+      //   }
+      //   );
+    
+      this.db.list('/JsonApi/' + id).delete();
     }
   };
   SearchByName = function (name) {
