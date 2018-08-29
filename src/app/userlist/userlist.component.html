@@ -22,7 +22,7 @@
             <td>{{jsonapi.address}}</td>
             <td>{{jsonapi.email}}</td>
             <td>{{jsonapi.passward}}</td>
-            <td (click)="deletedata(jsonapi.id)">
+            <td (click)="deletedata(jsonapi.$key)">
             <a><span class="glyphicon glyphicon-trash"></span> </a>
         </td>
 

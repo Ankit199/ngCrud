@@ -14,7 +14,7 @@ import { UserlistComponent } from './userlist/userlist.component';
 import { HttpModule } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { UpdateComponent } from './update/update.component';
-
+import * as $ from 'jquery';
 import { UserloginService } from './userlogin.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';

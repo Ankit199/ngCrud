@@ -4,6 +4,7 @@ import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { FirebaseApp } from 'angularfire2';
 
 
 @Component({
@@ -24,9 +25,11 @@ export class UserlistComponent implements OnInit {
     //     this.jsonapi = res.json();
     //   }
     // );
-    this.db.list('/JsonApi').valueChanges().subscribe(countries => {  
-      debugger;      
-      this.jsonapi = countries;   
+    this.db.list('JsonApi').valueChanges().subscribe(data => {  
+      debugger;  
+       
+      this.jsonapi = data;  
+     
   });  
   };
 
@@ -43,8 +46,9 @@ export class UserlistComponent implements OnInit {
       //     // this.SearchAllUser();
       //   }
       //   );
-    
-      this.db.list('/JsonApi/' + id).delete();
+      var nameRef = this.db.list('/JsonApi');
+      nameRef.child('id').remove(id);
+  //this.db.list('/JsonApi/').valueChanges()
     }
   };
   SearchByName = function (name) {
