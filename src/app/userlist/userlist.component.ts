@@ -20,6 +20,8 @@ export class UserlistComponent implements OnInit {
   constructor(private http: Http, private router: Router, private route: ActivatedRoute,private db : AngularFireDatabase) { }
 
   SearchAllUser = function () {
+
+
     // this.http.get('http://localhost:3000/jsonapi').subscribe(
     //   (res: Response) => {
     //     this.jsonapi = res.json();
@@ -46,8 +48,7 @@ export class UserlistComponent implements OnInit {
       //     // this.SearchAllUser();
       //   }
       //   );
-      var nameRef = this.db.list('/JsonApi');
-      nameRef.child('id').remove(id);
+  
   //this.db.list('/JsonApi/').valueChanges()
     }
   };
