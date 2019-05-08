@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     const name = e.target.elements[0].value;
     const passward = e.target.elements[0].value;
 
-    if (name === 'ankit' && passward === 'ankit') {
+    if (name === 'charu' && passward === 'jasiwal') {
       this.user.setuserlogin();
       this.router.navigate(['home']);
     }  else {
